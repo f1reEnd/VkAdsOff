@@ -1,0 +1,22 @@
+{
+    "name": "VkAdsOff",
+    "version": "1.0",
+    "description": "description",
+    "manifest_version": 3,
+    "permissions": ["storage"],
+    "host_permissions": ["https://vk.com/*"],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_title": "VkAdsOff",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+        "matches": ["https://vk.com/*"],
+        "js": ["content.js"],
+        "css": ["style.css"]
+        }
+    ]
+}

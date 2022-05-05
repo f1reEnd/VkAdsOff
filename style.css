@@ -1,0 +1,70 @@
+.popup {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    background: #7489b1;
+}
+
+.buttonAdBlock {
+    position: relative;
+    width: 50px;
+    height: 25px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="checkbox"] {
+    position:relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    width: 50px;
+    height: 25px;
+    -webkit-appearance: none;
+    outline: none;
+    border-radius: 12.5px;
+    background: #c6c6c6;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    transition: .5s;
+}
+
+input:checked[type="checkbox"] {
+    background: #00dacf;
+}
+
+input[type="checkbox"]:before {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: scale(1.1);
+    background-color: #f3f3f3;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    transition: 500ms;
+}
+
+input:checked[type="checkbox"]:before {
+    left: 25px;
+}
+
+#background{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #0073c0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.adblock_hide {
+    display: none;
+}
