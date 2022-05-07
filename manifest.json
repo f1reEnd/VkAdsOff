@@ -3,13 +3,17 @@
     "version": "1.0",
     "description": "description",
     "manifest_version": 3,
-    "permissions": ["storage"],
+    "permissions": ["storage", "tabs"],
     "host_permissions": ["https://vk.com/*"],
     "background": {
         "service_worker": "background.js"
     },
     "action": {
         "default_title": "VkAdsOff",
+        "default_icon": "iconOff128.png",
+        "icons": {
+            "128": "iconOn128.png"
+        },
         "default_popup": "popup.html"
     },
     "content_scripts": [
