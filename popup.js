@@ -1,3 +1,11 @@
+function onIcon() {
+    chrome.action.setIcon({path: {"128": "iconOn128.png"}});
+}
+
+function offIcon() {
+    chrome.action.setIcon({path: {"128": "iconOff128.png"}});
+}
+
 function background_fill() {
     let animation = document.getElementById("background").animate([
         {transform: "scale(1, 1)"},
@@ -30,9 +38,11 @@ document.getElementById("mainButton").addEventListener("change", () => {
         if (buttonStatus == "off") {
             chrome.storage.sync.set({ "buttonStatus": "on" });
             background_fill();
+            onIcon();
         } else if (buttonStatus == "on") {
             chrome.storage.sync.set({ "buttonStatus": "off" });
             background_clear();
+            offIcon();
         }
     });
 })
