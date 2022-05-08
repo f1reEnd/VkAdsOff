@@ -13,6 +13,14 @@ chrome.runtime.onInstalled.addListener(() => {
     offIcon();
 });
 
+chrome.runtime.onStartup.addListener(() => {
+    console.log("open browser");
+    chrome.storage.sync.get("buttonStatus", ({ buttonStatus }) => {
+        if (buttonStatus == "on") onIcon();
+        if (buttonStatus == "off") offIcon();
+    });
+});
+
 
 
 
